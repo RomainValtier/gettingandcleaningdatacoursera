@@ -1,3 +1,4 @@
+This code book summarizes the resulting data fields in tidy.txt.
 
 # Identifiers
 * `activity` - The type of activity performed (cf. Activity Labels)

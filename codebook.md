@@ -1,6 +1,6 @@
 
 # Identifiers
-* `activity` - The type of activity performed
+* `activity` - The type of activity performed (cf. Activity Labels)
 * `subject` - The ID of the subject
 
 # Measurements
@@ -74,3 +74,8 @@
 # Activity Labels
 
 * `laying`
+* `sitting`
+* `standing`
+* `walking`
+* `walkingdownstairs`
+* `walkingupstairs`

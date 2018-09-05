@@ -42,10 +42,12 @@ names(x.data.mean.std) <- gsub("\\(|\\)", "", names(x.data.mean.std))
 
 data <- cbind(y.data, subject.data, x.data.mean.std)
 #str(data)
-#write.table(data, "./UCI HAR Dataset/tidydata_merged.txt", row.names = FALSE)
+#write.table(data, "./UCI HAR Dataset/tidyall.txt", row.names = FALSE)
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 library("dplyr")
 data.mean.byactivity.bysubject <- data %>% group_by(activity, subject) %>% summarise_at(vars(-activity, -subject), funs(mean(., na.rm=TRUE)))
 str(data.mean.byactivity.bysubject)
+
+# 6. Write data set in a txt file tidy.txt.
 write.table(data.mean.byactivity.bysubject, "./UCI HAR Dataset/tidy.txt", row.names = FALSE)

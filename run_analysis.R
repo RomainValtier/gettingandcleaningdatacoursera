@@ -5,7 +5,7 @@ fileNAME <- "UCI_HAR_Dataset.zip"
 download.file(fileURL, fileNAME)
 unzip(fileNAME)
 
-# 1. Merges the training and the test sets to create one data set
+# 1. Merges the training and the test sets
 x.train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 x.test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 x.data <- rbind(x.train, x.test)

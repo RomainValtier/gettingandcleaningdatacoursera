@@ -1,9 +1,12 @@
 # 0. Get data from source
-
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 fileNAME <- "UCI_HAR_Dataset.zip"
-download.file(fileURL, fileNAME)
-unzip(fileNAME)
+if (!file.exists(fileNAME)){
+        download.file(fileURL, fileNAME)
+}  
+if (!file.exists("UCI HAR Dataset")) { 
+        unzip(fileNAME) 
+}
 
 # 1. Merges the training and the test sets
 x.train <- read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -45,4 +48,4 @@ data <- cbind(y.data, subject.data, x.data.mean.std)
 library("dplyr")
 data.mean.byactivity.bysubject <- data %>% group_by(activity, subject) %>% summarise_at(vars(-activity, -subject), funs(mean(., na.rm=TRUE)))
 str(data.mean.byactivity.bysubject)
-write.table(data.mean.byactivity.bysubject, "./UCI HAR Dataset/tidydata_average.txt", row.names = FALSE)
+write.table(data.mean.byactivity.bysubject, "./UCI HAR Dataset/tidy.txt", row.names = FALSE)

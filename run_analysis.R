@@ -5,8 +5,8 @@ library("dplyr")
 
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 fileNAME <- "UCI_HAR_Dataset.zip"
-#download.file(fileURL, fileNAME)
-#unzip(fileNAME)
+download.file(fileURL, fileNAME)
+unzip(fileNAME)
 
 # 1. Merges the training and the test sets to create one data set
 x.train <- read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -45,6 +45,6 @@ str(data)
 write.table(data, "./UCI HAR Dataset/tidydata_merged.txt", row.names = FALSE)
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-data.mean.byactivity.bysubject <- data %>% group_by(activity, subject) %>% summarise_at(vars(-activity, -subject), funs(mean(., na.rm=TRUE)))
-str(data.mean.byactivity.bysubject)
-write.table(data.mean.byactivity.bysubject, "./UCI HAR Dataset/tidydata_average.txt", row.names = FALSE)
+# data.mean.byactivity.bysubject <- data %>% group_by(activity, subject) %>% summarise_at(vars(-activity, -subject), funs(mean(., na.rm=TRUE)))
+# str(data.mean.byactivity.bysubject)
+# write.table(data.mean.byactivity.bysubject, "./UCI HAR Dataset/tidydata_average.txt", row.names = FALSE)

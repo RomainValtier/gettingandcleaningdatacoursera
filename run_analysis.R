@@ -27,13 +27,13 @@ mean.std <- grep("-mean\\(\\)|-std\\(\\)", features.data[, 2])
 x.data.mean.std <- x.data[, mean.std]
 
 
-# 3. Uses descriptive activity names to name the activities in the data set.
+# 3. Uses descriptive activity names to name the activities in the data set and clean activity names.
 activities.data <- read.table("./UCI HAR Dataset/activity_labels.txt")
 activities.data[, 2] <- tolower(as.character(activities.data[, 2]))
 activities.data[, 2] <- gsub("_", "", activities.data[, 2])
 y.data[, 1] = activities.data[y.data[, 1], 2]
 
-# 4. Appropriately labels the data set with descriptive variable names.
+# 4. Appropriately labels the data set with descriptive variable names and clean column names.
 colnames(y.data) <- 'activity'
 colnames(subject.data) <- 'subject'
 names(x.data.mean.std) <- features.data[mean.std, 2]

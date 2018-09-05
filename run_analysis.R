@@ -8,7 +8,7 @@ if (!file.exists("UCI HAR Dataset")) {
         unzip(fileNAME) 
 }
 
-# 1. Merges the training and the test sets
+# 1. Load the training and the test sets
 x.train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 x.test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 x.data <- rbind(x.train, x.test)

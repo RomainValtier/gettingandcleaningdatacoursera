@@ -1,4 +1,4 @@
-# 0. Get data from source : https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+# 0. Get data from source
 
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 fileNAME <- "UCI_HAR_Dataset.zip"

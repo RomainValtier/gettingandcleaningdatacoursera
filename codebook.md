@@ -1,10 +1,9 @@
 
-## Identifiers
+# Identifiers
+* `activity` - The type of activity performed
+* `subject` - The ID of the subject
 
-* `subject` - The ID of the test subject
-* `activity` - The type of activity performed when the corresponding measurements were taken
-
-## Measurements
+# Measurements
 * `tbodyacc-mean-x`
 * `tbodyacc-mean-y`
 * `tbodyacc-mean-z`
@@ -72,3 +71,6 @@
 * `fbodybodygyrojerkmag-mean`
 * `fbodybodygyrojerkmag-std`
 
+# Activity Labels
+
+* `laying`
